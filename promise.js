@@ -10,11 +10,11 @@ const makeAllCaps = function(arrayOfWords){
         */  
         
 
-        var toUpper = function(x){ 
+        var toUpper = async function(x){ 
           if(typeof x === "string"){
-            return x.toUpperCase();
+            return await x.toUpperCase();
           }else{
-            return x;
+            return await x;
           }
          
         };
@@ -39,7 +39,8 @@ const sortTheArray = function(arrayOfWords){
 
 
 // Call doSomething and receive a Promise as return
-let doIt = makeAllCaps(complicatedArray)
+let doIt =   makeAllCaps(complicatedArray)
+
 doIt.then(sortTheArray)
 // Wait for the promise to get resolved...
 doIt.then(response => {  
